@@ -12,6 +12,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+const supabase = createClient();
     event.preventDefault();
     setMessage("");
     setLoading(true);
