@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/utils/supabase/client";
 
 export default function OwnerPage() {
+const supabase = createClient();
   const router = useRouter();
   const [status, setStatus] = useState("Hesap kontrol ediliyor…");
   const [email, setEmail] = useState("");
